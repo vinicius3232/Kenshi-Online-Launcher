@@ -1,16 +1,147 @@
-# Kenshi Online Launcher
+<div align="center">
 
-Launcher de multiplayer co-op para Kenshi.
+# 🎮 Kenshi Online
 
-## Download
+**Multiplayer co-op não-oficial para [Kenshi](https://store.steampowered.com/app/233860/Kenshi/)**
 
-Baixe o instalador mais recente na aba **[Releases](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/latest)**.
+Jogue Kenshi com seus amigos na mesma sessão, via VPN, com um launcher simples de "baixar e jogar".
 
-### Como instalar
-1. Baixe o `Kenshi-Online-Setup-1.0.2.exe`.
-2. Rode o instalador e abra o Kenshi Online.
-3. Clique em **Instalar Mod**.
-4. Conecte no Radmin VPN.
-5. No jogo: **F1** abre o menu, **Enter** abre o chat.
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-1.0.2-blue.svg)](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/latest)
+[![Plataforma](https://img.shields.io/badge/plataforma-Windows%2010%2F11-success.svg)]()
+[![Download](https://img.shields.io/badge/⬇️-Baixar%20instalador-brightgreen.svg)](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/download/v1.0.2/Kenshi-Online-Setup-1.0.2.exe)
 
-Requisitos: Kenshi (Steam) + Radmin VPN.
+</div>
+
+---
+
+## 📥 Download
+
+➡️ **[Baixar o instalador mais recente (v1.0.2)](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/latest)**
+
+Ou link direto: [`Kenshi-Online-Setup-1.0.2.exe`](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/download/v1.0.2/Kenshi-Online-Setup-1.0.2.exe) (~100 MB)
+
+---
+
+## ✨ O que é
+
+O **Kenshi Online** adiciona multiplayer cooperativo ao Kenshi (que é um jogo originalmente single-player). Ele é composto por:
+
+- **Launcher** — um aplicativo desktop (Electron + React) que instala o mod, gerencia o servidor e abre o jogo.
+- **Mod KenshiMP** — um conjunto de plugins em C++ que injeta a camada de rede no motor do jogo (Ogre/ENet), sincronizando personagens, posições e chat entre os jogadores.
+
+A conexão entre os jogadores é feita por **VPN (Radmin VPN)**, criando uma rede local virtual — sem necessidade de abrir portas no roteador.
+
+---
+
+## 🧩 Requisitos
+
+| Requisito | Detalhe |
+|-----------|---------|
+| 🪟 Sistema | Windows 10 ou 11 (64-bit) |
+| 🎮 Jogo | **Kenshi** instalado (Steam) |
+| 🌐 VPN | [**Radmin VPN**](https://www.radmin-vpn.com/) (gratuito) |
+| 👥 Jogadores | Suporta até **16** jogadores na mesma sessão |
+
+---
+
+## 🚀 Instalação (passo a passo)
+
+### 1️⃣ Baixar o instalador
+Baixe o [`Kenshi-Online-Setup-1.0.2.exe`](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/download/v1.0.2/Kenshi-Online-Setup-1.0.2.exe).
+
+> ⚠️ O navegador pode avisar que o arquivo "não é verificado". Isso é normal (instalador sem assinatura digital paga). Clique em **Manter / Manter mesmo assim**.
+
+### 2️⃣ Rodar o instalador
+- Duplo clique no `.exe`.
+- Se o Windows mostrar a tela **"Windows protegeu o computador"** → **Mais informações** → **Executar assim mesmo**.
+- Avance: **Avançar → Instalar → Concluir**.
+
+### 3️⃣ Instalar o mod
+- Abra o **Kenshi Online** (atalho na Área de Trabalho).
+- Clique em **Instalar Mod** e aguarde a confirmação.
+
+### 4️⃣ Entrar na VPN
+- Abra o **Radmin VPN**.
+- Entre na rede do grupo (peça **nome da rede** e **senha** ao host).
+- Confirme o status **Conectado**.
+
+### 5️⃣ Jogar
+- No launcher, entre no servidor do host.
+- Dentro do jogo:
+  - **F1** → menu do multiplayer
+  - **Enter** → chat
+
+🎉 Pronto!
+
+---
+
+## 🎛️ Controles in-game
+
+| Tecla | Ação |
+|-------|------|
+| `F1` | Abre/fecha o menu do multiplayer |
+| `Enter` | Abre o chat |
+
+---
+
+## 🏗️ Arquitetura técnica
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    KENSHI ONLINE                          │
+├─────────────────────────────────────────────────────────┤
+│  Launcher (Electron + React 19 + Vite)                    │
+│   └─ Instala o mod, sobe o servidor e abre o jogo         │
+├─────────────────────────────────────────────────────────┤
+│  Mod KenshiMP (C++)                                       │
+│   ├─ KenshiMP.Core.dll    → plugin Ogre (rede no jogo)    │
+│   ├─ KenshiMP.Server.exe  → servidor dedicado (ENet/UDP)  │
+│   └─ KenshiMP.Injector.exe → registra o plugin no jogo    │
+├─────────────────────────────────────────────────────────┤
+│  Transporte: ENet (UDP)  •  Rede: Radmin VPN              │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Componentes:**
+- `KenshiMP.Core` — plugin carregado pelo Ogre (`Plugins_x64.cfg`), faz sincronização de estado, interpolação e tratamento de pacotes.
+- `KenshiMP.Server` — servidor dedicado autoritativo, gerencia jogadores conectados, broadcast de posições e chat.
+- `KenshiMP.Injector` — registra o plugin e configura o caminho do launcher.
+
+---
+
+## 🛠️ Melhorias e correções
+
+Veja o histórico completo de mudanças no **[CHANGELOG.md](CHANGELOG.md)**.
+
+**Destaques da v1.0.2:**
+- 🐛 Correção do crash "jogo fecha após instalar o mod".
+- 🛡️ Proteções anti-crash no tratamento de pacotes de rede.
+- 🚦 Rate-limiting de chat e construção (anti-spam/flood).
+- 🔄 Sincronização de posição em lote (menos tráfego de rede).
+- 🎯 Suporte a spawn de jogadores 3 a 16.
+- 🖥️ Correção de layout do menu (F1) e do chat.
+
+---
+
+## ❓ Problemas comuns
+
+| Problema | Solução |
+|----------|---------|
+| Não vejo ninguém na VPN | Todos precisam estar na **mesma rede** do Radmin VPN. |
+| O jogo fecha sozinho | Reabra o launcher e clique em **Instalar Mod** novamente. |
+| Antivírus apagou o arquivo | Adicione a pasta do Kenshi Online como exceção e baixe de novo. |
+| Tela azul do Windows ao abrir | **Mais informações → Executar assim mesmo**. |
+
+---
+
+## ⚖️ Aviso legal
+
+Projeto **não-oficial**, feito por fãs. Kenshi é uma marca da **Lo-Fi Games**. Este projeto não é afiliado, patrocinado ou endossado pela Lo-Fi Games. Use por sua conta e risco.
+
+---
+
+<div align="center">
+
+Feito com ❤️ pela comunidade • [Reportar um problema](https://github.com/vinicius3232/Kenshi-Online-Launcher/issues)
+
+</div>
