@@ -6,6 +6,33 @@ O formato segue, de forma aproximada, o [Keep a Changelog](https://keepachangelo
 
 ---
 
+## [1.0.2b] — 2026-05-28 — hotfix de sincronização (jogadores não se viam)
+
+Correção crítica no `KenshiMP.Core.dll`. O instalador do GitHub Release foi
+republicado (mesmo link). **Ambos os jogadores precisam reinstalar** — o fix
+está no DLL do cliente.
+
+### 🐛 Correções
+
+- **Jogadores conectavam mas não se viam (faction mismatch)** — o servidor (e os
+  IDs de facção do `kenshi-online.mod`) usam a forma com extensão e prefixo de
+  ordem de carregamento: `10-kenshi-online.mod` = Player 1, `12-kenshi-online.mod`
+  = Player 2. O cliente comparava **sem o `.mod`** (`"10-kenshi-online"`), então
+  nunca casava — o `shared_save_sync` falhava na inicialização e inundava o log
+  com *"Unknown faction"* (~24 mil linhas por sessão), sem nunca sincronizar.
+  *(KenshiMP.Core — game/shared_save_sync)*
+  - Agora a identificação do jogador usa o **slot atribuído pelo servidor**
+    (autoritativo, independente de prefixo), com *fallback* tolerante à `.mod` e
+    ao prefixo de ordem de carregamento.
+
+> ⚠️ **Modelo de jogo (importante):** o sync localiza os personagens **"Player 1"**
+> e **"Player 2"**, que só existem no start **"Multiplayer"** do mod. Os dois
+> jogadores devem iniciar **Novo Jogo → start "Multiplayer"** (ou carregar o
+> **mesmo** save criado a partir dele) — carregar saves individuais antigos não
+> sincroniza.
+
+---
+
 ## [1.0.2a] — 2026-05-28 — hotfix de instalação
 
 Correção crítica no fluxo de **instalação do mod** pelo launcher. O instalador
@@ -117,5 +144,6 @@ build próprio (compilação com MSVC + Ninja).
 
 ---
 
+[1.0.2b]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
 [1.0.2a]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
 [1.0.2]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
