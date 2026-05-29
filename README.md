@@ -45,6 +45,8 @@ O **Kenshi Online** adiciona multiplayer cooperativo ao Kenshi (que é um jogo o
 
 A conexão entre os jogadores é feita por **VPN (Radmin VPN)**, criando uma rede local virtual — sem necessidade de abrir portas no roteador.
 
+> ✅ **Instalação automática:** ao clicar em **Instalar Mod**, o launcher coloca os arquivos de interface (`.layout`) em `data/gui/layout/`, ativa o mod em `data/__mods.list` e registra o plugin no `Plugins_x64.cfg` sozinho. Nada de copiar arquivo na mão — esse é justamente o erro mais comum em instalações manuais (menu **F1**/chat que não abre).
+
 ---
 
 ## 🧩 Requisitos

@@ -90,6 +90,7 @@ Para os jogadores se verem, **todos precisam estar no mesmo mundo "Multiplayer"*
 |----------|---------|
 | Conecta mas **não vejo o outro jogador** | Os dois iniciaram pelo start **"Multiplayer"**? (Passo 4). Esse é o erro mais comum. |
 | Não vejo ninguém na VPN | Todos na **mesma rede** do Radmin VPN? (Passo 3) |
+| O **menu (F1)** ou o **chat** não aparece | Reabra o launcher → **Instalar Mod** de novo (com o Kenshi fechado). O launcher coloca os arquivos de interface (`.layout`) em `data/gui/layout/` automaticamente — você **não** precisa copiar nada à mão. |
 | O jogo fecha sozinho ao abrir | Reabra o launcher → **Instalar Mod** de novo. Feche o Kenshi antes. |
 | Antivírus apagou o arquivo | Adicione a pasta do Kenshi Online como exceção e baixe de novo. |
 | "Windows protegeu o computador" | **Mais informações → Executar assim mesmo** (instalador sem assinatura paga, é normal). |

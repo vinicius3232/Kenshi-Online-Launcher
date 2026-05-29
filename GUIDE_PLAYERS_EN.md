@@ -90,6 +90,7 @@ For players to see each other, **everyone must be in the same "Multiplayer" worl
 |---------|-----|
 | Connected but **I can't see the other player** | Did everyone start via the **"Multiplayer"** start? (Step 4). This is the most common mistake. |
 | I don't see anyone on the VPN | Is everyone on the **same** Radmin network? (Step 3) |
+| The **F1 menu** or the **chat** doesn't appear | Reopen the launcher → **Install Mod** again (with Kenshi closed). The launcher places the UI files (`.layout`) in `data/gui/layout/` automatically — you do **not** need to copy anything by hand. |
 | The game closes by itself on launch | Reopen the launcher → **Install Mod** again. Close Kenshi first. |
 | Antivirus deleted the file | Add the Kenshi Online folder as an exception and download again. |
 | "Windows protected your PC" | **More info → Run anyway** (unsigned installer, this is normal). |

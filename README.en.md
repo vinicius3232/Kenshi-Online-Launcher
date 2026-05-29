@@ -45,6 +45,8 @@ The launcher has a **language selector** (🌐 top-right corner): **Português �
 
 Players connect over **VPN (Radmin VPN)**, creating a virtual local network — no need to open router ports.
 
+> ✅ **Automatic install:** when you click **Install Mod**, the launcher places the UI files (`.layout`) in `data/gui/layout/`, activates the mod in `data/__mods.list` and registers the plugin in `Plugins_x64.cfg` for you. No manual file copying — that's exactly the most common manual-install mistake (the **F1** menu / chat not showing up).
+
 ---
 
 ## 🧩 Requirements
