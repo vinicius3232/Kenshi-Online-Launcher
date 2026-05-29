@@ -10,6 +10,8 @@ Jogue Kenshi com seus amigos na mesma sessão, via VPN, com um launcher simples 
 [![Plataforma](https://img.shields.io/badge/plataforma-Windows%2010%2F11-success.svg)]()
 [![Download](https://img.shields.io/badge/⬇️-Baixar%20instalador-brightgreen.svg)](https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/download/v1.0.2/Kenshi-Online-Setup-1.0.2.exe)
 
+**🌍 Idioma:** **Português** · [English](README.en.md) · [Русский](README.ru.md)
+
 </div>
 
 ---
