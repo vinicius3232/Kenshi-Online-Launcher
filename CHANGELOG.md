@@ -6,6 +6,30 @@ O formato segue, de forma aproximada, o [Keep a Changelog](https://keepachangelo
 
 ---
 
+## [1.0.2a] — 2026-05-28 — hotfix de instalação
+
+Correção crítica no fluxo de **instalação do mod** pelo launcher. O instalador
+do GitHub Release foi republicado (mesmo link, mesma versão 1.0.2).
+
+### 🐛 Correções
+
+- **Jogadores conectavam mas não se viam** — o launcher instalava apenas o
+  plugin de rede (`KenshiMP.Core.dll` + `Plugins_x64.cfg`), mas **não copiava o
+  mod `kenshi-online.mod`** nem o ativava em `data/__mods.list`. Sem esse mod, os
+  *templates* de personagem (Player 1–16) não carregavam e o `SpawnManager` não
+  conseguia criar os personagens remotos — então a conexão funcionava (mostrava
+  "2 jogadores"), mas ninguém aparecia no mundo. *(Launcher — install-mod)*
+  - O `kenshi-online.mod` passou a ser incluído no pacote (`resources/mod/`) e
+    copiado para `data/kenshi-online.mod` **e** `mods/kenshi-online/`.
+  - O launcher agora ativa o mod em `data/__mods.list` (preservando CRLF), além
+    de registrar o plugin no `Plugins_x64.cfg`.
+
+> ℹ️ **Como jogar:** ambos os jogadores precisam **carregar um save / estar
+> dentro do mundo** antes de conectar — conectar pelo menu (sem mundo carregado)
+> impede o spawn dos personagens.
+
+---
+
 ## [1.0.2] — 2026-05-28
 
 Versão de **estabilização**: foco em corrigir crashes, blindar a rede contra
@@ -93,4 +117,5 @@ build próprio (compilação com MSVC + Ninja).
 
 ---
 
+[1.0.2a]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
 [1.0.2]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
