@@ -6,6 +6,25 @@ O formato segue, de forma aproximada, o [Keep a Changelog](https://keepachangelo
 
 ---
 
+## [1.0.2c] — 2026-05-28 — launcher multi-idioma (PT / EN / RU)
+
+Melhoria de usabilidade para a comunidade internacional. O instalador do GitHub
+Release foi republicado (mesmo link). Não há mudança no DLL/servidor — **só o
+launcher mudou**; reinstalar é opcional (só para ganhar a interface traduzida).
+
+### 🌍 Idiomas
+
+- **Seletor de idioma no launcher** — botão 🌐 no canto superior direito alterna
+  entre **Português (BR)**, **Inglês** e **Russo**. Toda a interface (abas,
+  campos, botões, console) é traduzida em tempo real. *(Launcher — i18n)*
+  - A escolha é **lembrada** entre sessões (`localStorage`), e o idioma inicial
+    é detectado pelo idioma do sistema (com *fallback* para Inglês).
+- **Guias do jogador em 3 idiomas** — `GUIA_JOGADORES.md` (PT-BR),
+  `GUIDE_PLAYERS_EN.md` (EN) e `GUIDE_PLAYERS_RU.md` (RU), com o passo a passo
+  completo e a regra de ouro do start **"Multiplayer"**.
+
+---
+
 ## [1.0.2b] — 2026-05-28 — hotfix de sincronização (jogadores não se viam)
 
 Correção crítica no `KenshiMP.Core.dll`. O instalador do GitHub Release foi
@@ -144,6 +163,7 @@ build próprio (compilação com MSVC + Ninja).
 
 ---
 
+[1.0.2c]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
 [1.0.2b]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
 [1.0.2a]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2
 [1.0.2]: https://github.com/vinicius3232/Kenshi-Online-Launcher/releases/tag/v1.0.2

@@ -22,6 +22,18 @@ Ou link direto: [`Kenshi-Online-Setup-1.0.2.exe`](https://github.com/vinicius323
 
 ---
 
+## 🌍 Guia do jogador / Player guide / Руководство
+
+O launcher tem **seletor de idioma** (🌐 canto superior direito): **Português · English · Русский**.
+
+| Idioma | Guia passo a passo |
+|--------|--------------------|
+| 🇧🇷 Português | [`GUIA_JOGADORES.md`](GUIA_JOGADORES.md) |
+| 🇬🇧 English | [`GUIDE_PLAYERS_EN.md`](GUIDE_PLAYERS_EN.md) |
+| 🇷🇺 Русский | [`GUIDE_PLAYERS_RU.md`](GUIDE_PLAYERS_RU.md) |
+
+---
+
 ## ✨ O que é
 
 O **Kenshi Online** adiciona multiplayer cooperativo ao Kenshi (que é um jogo originalmente single-player). Ele é composto por:
