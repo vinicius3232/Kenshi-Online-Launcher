@@ -146,6 +146,16 @@ Veja o histórico completo de mudanças no **[CHANGELOG.md](CHANGELOG.md)**.
 
 ---
 
+## 🙏 Créditos / Projeto original
+
+Este projeto é baseado no **[The404Studios/Kenshi-Online](https://github.com/The404Studios/Kenshi-Online)** — o projeto principal e original de multiplayer para Kenshi (mod KenshiMP).
+
+> **O Kenshi Online (este repositório) é apenas uma forma de simplificar a ideia:** um launcher "baixar e jogar" + instalador, para que jogadores não-técnicos consigam usar o trabalho do projeto original sem precisar compilar nada. **Todo o crédito da tecnologia de multiplayer vai para o [The404Studios/Kenshi-Online](https://github.com/The404Studios/Kenshi-Online)** e à comunidade que contribui com ele.
+
+Se você quer o projeto completo, em desenvolvimento ativo e com todo o histórico, vá direto à fonte: **https://github.com/The404Studios/Kenshi-Online**
+
+---
+
 ## ⚖️ Aviso legal
 
 Projeto **não-oficial**, feito por fãs. Kenshi é uma marca da **Lo-Fi Games**. Este projeto não é afiliado, patrocinado ou endossado pela Lo-Fi Games. Use por sua conta e risco.
