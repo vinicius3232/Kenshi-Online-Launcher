@@ -37,7 +37,15 @@ Simple guide to play Kenshi co-op with friends. **Every player must follow the s
 
 ---
 
-## 3️⃣ Join the VPN (Radmin)
+## 3️⃣ Join the VPN (Radmin) — only if needed
+
+Since v2.0, **hosting** no longer strictly requires the VPN: clicking **Host**
+makes the launcher try to open the port automatically (UPnP). If it works,
+other players just need the **IP:port** the host shares — skip this whole
+step.
+
+Use the VPN if UPnP fails (a warning shows in the launcher console) or if
+you'd rather keep the group on a private network:
 
 1. Open **Radmin VPN**.
 2. Join the **same network** as the group (ask the host for the **network name** and **password**).
@@ -88,8 +96,9 @@ For players to see each other, **everyone must be in the same "Multiplayer" worl
 
 | Problem | Fix |
 |---------|-----|
+| Anything looks off before playing | **Diagnostics** tab in the launcher — automatically checks the mod is installed, active, and the plugin is registered. |
 | Connected but **I can't see the other player** | Did everyone start via the **"Multiplayer"** start? (Step 4). This is the most common mistake. |
-| I don't see anyone on the VPN | Is everyone on the **same** Radmin network? (Step 3) |
+| I don't see anyone on the VPN | Is everyone on the **same** Radmin network? (Step 3) — only applies if you're not using UPnP/direct connect. |
 | The **F1 menu** or the **chat** doesn't appear | Reopen the launcher → **Install Mod** again (with Kenshi closed). The launcher places the UI files (`.layout`) in `data/gui/layout/` automatically — you do **not** need to copy anything by hand. |
 | The game closes by itself on launch | Reopen the launcher → **Install Mod** again. Close Kenshi first. |
 | Antivirus deleted the file | Add the Kenshi Online folder as an exception and download again. |

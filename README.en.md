@@ -55,7 +55,7 @@ Players connect over **VPN (Radmin VPN)**, creating a virtual local network — 
 |-------------|--------|
 | 🪟 System | Windows 10 or 11 (64-bit) |
 | 🎮 Game | **Kenshi** installed (Steam) |
-| 🌐 VPN | [**Radmin VPN**](https://www.radmin-vpn.com/) (free) |
+| 🌐 VPN | [**Radmin VPN**](https://www.radmin-vpn.com/) (free) — fallback if UPnP fails when hosting |
 | 👥 Players | Supports up to **16** players in the same session |
 
 ---
@@ -76,7 +76,7 @@ Download [`Kenshi-Online-Setup-1.0.2.exe`](https://github.com/vinicius3232/Kensh
 - Open **Kenshi Online** (Desktop shortcut).
 - Click **Install Mod** and wait for confirmation.
 
-### 4️⃣ Join the VPN
+### 4️⃣ Join the VPN (only if hosting couldn't open the port automatically)
 - Open **Radmin VPN**.
 - Join the group's network (ask the host for the **network name** and **password**).
 - Confirm the **Connected** status.
@@ -136,6 +136,31 @@ See the full change history in **[CHANGELOG.md](CHANGELOG.md)**.
 - 🔄 Batched position sync (less network traffic).
 - 🎯 Support for spawning players 3 through 16.
 - 🖥️ Fixed the menu (F1) and chat layout.
+
+**v2.0.0 highlights (in progress):**
+- 📂 **Launcher source code published** — the app is no longer distributed
+  only as a compiled binary; it can now be reviewed, built, and contributed to.
+- 🩺 New **Diagnostics** tab, turning the "Common issues" table below into
+  automated checks (mod installed, active, plugin registered).
+- 🔌 **Hosting no longer strictly requires Radmin VPN** — `KenshiMP.Server.exe`
+  already tries UPnP on its own before falling back to VPN/manual port
+  forwarding.
+- ⬆️ Auto-update via GitHub Releases.
+- 🧭 See [`PLANO_OPERACIONAL.md`](PLANO_OPERACIONAL.md) (Portuguese) for the
+  roadmap to release and what's still being validated.
+
+---
+
+## 👩‍💻 Building the launcher from source
+
+```bash
+npm install
+npm run electron:dev     # development
+npm run electron:build   # builds the NSIS installer into release/
+```
+
+More details (folder structure, test notes, what's left before release) in
+[`LAUNCHER_DEV.md`](LAUNCHER_DEV.md).
 
 ---
 

@@ -55,7 +55,7 @@ A conexão entre os jogadores é feita por **VPN (Radmin VPN)**, criando uma red
 |-----------|---------|
 | 🪟 Sistema | Windows 10 ou 11 (64-bit) |
 | 🎮 Jogo | **Kenshi** instalado (Steam) |
-| 🌐 VPN | [**Radmin VPN**](https://www.radmin-vpn.com/) (gratuito) |
+| 🌐 VPN | [**Radmin VPN**](https://www.radmin-vpn.com/) (gratuito) — fallback caso o UPnP falhe ao hospedar |
 | 👥 Jogadores | Suporta até **16** jogadores na mesma sessão |
 
 ---
@@ -76,7 +76,7 @@ Baixe o [`Kenshi-Online-Setup-1.0.2.exe`](https://github.com/vinicius3232/Kenshi
 - Abra o **Kenshi Online** (atalho na Área de Trabalho).
 - Clique em **Instalar Mod** e aguarde a confirmação.
 
-### 4️⃣ Entrar na VPN
+### 4️⃣ Entrar na VPN (só se hospedar não abrir a porta sozinho)
 - Abra o **Radmin VPN**.
 - Entre na rede do grupo (peça **nome da rede** e **senha** ao host).
 - Confirme o status **Conectado**.
