@@ -6,6 +6,31 @@ O formato segue, de forma aproximada, o [Keep a Changelog](https://keepachangelo
 
 ---
 
+## [2.0.0] — 2026-07-28 — código-fonte, diagnóstico, menos dependência de VPN (em progresso)
+
+**Trabalho em andamento** — ver [`LAUNCHER_DEV.md`](LAUNCHER_DEV.md) e
+[`PLANO_OPERACIONAL.md`](PLANO_OPERACIONAL.md) para o que já foi validado
+contra uma instalação real e o que ainda falta.
+
+### 📂 Código aberto
+- O código-fonte do launcher (Electron + React) passa a acompanhar este
+  repositório — antes só o instalador compilado era publicado.
+
+### 🩺 Diagnóstico
+- Nova aba que verifica automaticamente pasta do Kenshi, DLL instalada, mod
+  ativo em `__mods.list`, plugin registrado em `Plugins_x64.cfg` e VPN — a
+  tabela de "Problemas comuns" virou checagem de verdade.
+
+### 🔌 Hospedagem
+- Hospedar servidor não depende mais obrigatoriamente do Radmin VPN: usa o
+  `KenshiMP.Server.exe`, que tenta UPnP sozinho antes de pedir VPN/porta
+  manual.
+
+### ⬆️ Atualizações
+- Auto-update via GitHub Releases (`electron-updater`).
+
+---
+
 ## [1.0.2c] — 2026-05-28 — launcher multi-idioma (PT / EN / RU)
 
 Melhoria de usabilidade para a comunidade internacional. O instalador do GitHub

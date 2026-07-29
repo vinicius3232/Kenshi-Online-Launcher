@@ -137,6 +137,32 @@ Veja o histórico completo de mudanças no **[CHANGELOG.md](CHANGELOG.md)**.
 - 🎯 Suporte a spawn de jogadores 3 a 16.
 - 🖥️ Correção de layout do menu (F1) e do chat.
 
+**Destaques da v2.0.0 (em progresso):**
+- 📂 **Código-fonte do launcher publicado** — o app deixou de existir só como
+  binário compilado; agora é possível revisar, compilar e contribuir.
+- 🩺 Aba de **Diagnóstico**, que transforma a tabela de "Problemas comuns"
+  abaixo em checagens automáticas (mod instalado, ativo, plugin registrado).
+- 🔌 **Hospedar sem depender obrigatoriamente do Radmin VPN** — o
+  `KenshiMP.Server.exe` já tenta abrir a porta sozinho via UPnP (com
+  aviso claro quando isso falha e recomendação de VPN/porta manual).
+- ⬆️ Auto-update via GitHub Releases.
+- 🧭 Ver [`PLANO_OPERACIONAL.md`](PLANO_OPERACIONAL.md) para o roteiro até o
+  lançamento e o que ainda falta validar.
+
+---
+
+## 👩‍💻 Compilando o launcher do fonte
+
+```bash
+npm install
+npm run electron:dev     # desenvolvimento
+npm run electron:build   # gera o instalador NSIS em release/
+```
+
+Veja mais detalhes (estrutura de pastas, notas de teste, o que falta antes de
+publicar) em [`LAUNCHER_DEV.md`](LAUNCHER_DEV.md), e o roteiro completo em
+[`PLANO_OPERACIONAL.md`](PLANO_OPERACIONAL.md).
+
 ---
 
 ## ❓ Problemas comuns

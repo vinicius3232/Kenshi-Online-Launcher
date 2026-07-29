@@ -1,0 +1,6 @@
+node_modules/
+dist/
+release/
+*.log
+resources/tools/server.json
+resources/tools/*.log

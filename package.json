@@ -1,0 +1,71 @@
+{
+  "name": "kenshi-online-launcher",
+  "version": "2.0.0",
+  "description": "Launcher 'baixar e jogar' para Kenshi Online (multiplayer não-oficial, baseado no KenshiMP)",
+  "author": "vinicius3232",
+  "license": "MIT",
+  "main": "electron/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "electron:build": "npm run build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "electron-log": "^5.2.0",
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.3.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "vite": "^6.0.3",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.vinicius3232.kenshionline",
+    "productName": "Kenshi Online",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/mod",
+        "to": "mod"
+      },
+      {
+        "from": "resources/tools",
+        "to": "tools"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "perMachine": false,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "vinicius3232",
+        "repo": "Kenshi-Online-Launcher"
+      }
+    ]
+  }
+}
